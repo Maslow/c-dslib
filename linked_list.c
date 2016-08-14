@@ -69,7 +69,3 @@ void *ll_remove_at(linked_list_t *l, size_t pos) {
   free(p);
   return pd;
 }
-
-void ll_push(linked_list_t *l, void *pd) { ll_insert_at(l, pd, 0); }
-
-void *ll_pop(linked_list_t *l) { return ll_remove_at(l, 0); }
