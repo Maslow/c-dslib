@@ -1,3 +1,4 @@
+.PHONY:test
 test:bin/*.o
 	 clear
 	 # #################################################
@@ -14,10 +15,10 @@ test:bin/*.o
 build:bin/*.o
 	@
 
-bin/*.o:*test.c
-	gcc linked_list_test.c -o bin/linked_list.o
-	gcc ll_stack_test.c -o bin/stack.o
-	gcc ll_queue_test.c -o bin/queue.o
+bin/*.o:test/*test.c
+	gcc test/linked_list_test.c -o bin/linked_list.o
+	gcc test/ll_stack_test.c -o bin/stack.o
+	gcc test/ll_queue_test.c -o bin/queue.o
 
 clean:
 	rm -f bin/*.o

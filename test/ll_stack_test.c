@@ -1,6 +1,6 @@
 
-#include "ll_stack.c"
-#include "util.c"
+#include "../ll_stack.c"
+#include "../util.c"
 #include <stdio.h>
 
 int main(int argc, char const *argv[]) {

@@ -1,6 +1,6 @@
 
-#include "linked_list.c"
-#include "util.c"
+#include "../linked_list.c"
+#include "../util.c"
 #include <stdio.h>
 
 int main(int argc, char const *argv[]) {
