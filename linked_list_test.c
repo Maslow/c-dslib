@@ -1,28 +1,14 @@
 
 #include "linked_list.c"
+#include "util.c"
 #include <stdio.h>
-
-void show(ll_node_t *lln) {
-  if (lln == NULL) {
-    printf("\n");
-    return;
-  }
-  printf("%lf ", *((double *)lln->pd));
-  show(lln->next);
-}
-
-void *new_double(double d) {
-  double *p = (double *)malloc(sizeof(double));
-  *p = d;
-  return (void *)p;
-}
 
 int main(int argc, char const *argv[]) {
   linked_list_t list;
   linked_list_t *pl = &list;
   ll_init(pl);
   if (ll_empty(pl))
-    printf("list is empty\n");
+    printf("\tlist is empty\n");
 
   ll_insert_at(pl, new_double(3.14), 0);
   ll_insert_at(pl, new_double(4.14), 0);
@@ -31,8 +17,9 @@ int main(int argc, char const *argv[]) {
   while (pl->len) {
     double *d = ll_remove_at(pl, 0);
     if (d != NULL)
-      printf("%lf\n", *d);
+      printf("\t%lf ", *d);
     free(d);
   }
+  printf("\n");
   return 0;
 }
