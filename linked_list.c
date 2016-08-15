@@ -20,12 +20,13 @@ void ll_init(linked_list_t *l) {
 int ll_empty(linked_list_t *l) { return !(l->len); }
 
 int ll_insert_at(linked_list_t *l, void *pd, size_t pos) {
+  if (pos > l->len) {
+    return 0;
+  }
   ll_node_t *pn = (ll_node_t *)malloc(sizeof(ll_node_t));
   pn->pd = pd;
   pn->next = NULL;
-  if (pos > l->len) {
-    return 0;
-  } else if (pos == 0) {
+  if (pos == 0) {
     pn->next = l->head;
     l->head = pn;
     if (l->len == 0)
